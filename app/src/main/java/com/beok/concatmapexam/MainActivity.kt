@@ -15,6 +15,8 @@ import com.beok.concatmapexam.cartoon.CartoonViewModel
 import com.beok.concatmapexam.databinding.ActivityMainBinding
 import com.beok.concatmapexam.databinding.ItemBannerBinding
 import com.beok.concatmapexam.databinding.ItemCartoonBinding
+import com.beok.concatmapexam.databinding.ItemTekkenSummaryBinding
+import com.beok.concatmapexam.tekken.TekkenAdapter
 import com.beok.concatmapexam.tekken.TekkenViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -36,11 +38,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-        val bannerAdapter = BaseAdapter<Banner, ItemBannerBinding>(
+        val bannerAdapter = BaseAdapter<ItemBannerBinding>(
             layoutResourceID = R.layout.item_banner,
             bindingID = BR.banner
         ).apply {
             bannerViewModel.banner.observe(this@MainActivity, {
+                replaceItemList(it)
+                notifyItemInserted(0)
+            })
+        }
+        val tekkenAdapter = TekkenAdapter(
+            viewModels = mapOf(BR.vm to tekkenViewModel)
+        ).apply {
+            tekkenViewModel.character.observe(this@MainActivity, {
                 replaceItemList(it)
                 notifyItemInserted(0)
             })
@@ -63,7 +73,7 @@ class MainActivity : AppCompatActivity() {
             })
         }
         binding.rvMainContent.adapter =
-            ConcatAdapter(listOf(bannerAdapter, cartoonAdapter))
+            ConcatAdapter(listOf(bannerAdapter, tekkenAdapter, cartoonAdapter))
     }
 
     private fun setupBinding() {
