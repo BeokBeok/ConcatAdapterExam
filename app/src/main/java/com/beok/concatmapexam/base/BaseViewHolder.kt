@@ -12,7 +12,7 @@ open class BaseViewHolder<T, VDB : ViewDataBinding>(
     parent: ViewGroup,
     @LayoutRes private val layoutResourceID: Int,
     private val bindingID: Int,
-    private val viewModels: Map<Int, ViewModel>
+    private val viewModels: Map<Int, ViewModel> = mapOf()
 ) : RecyclerView.ViewHolder(
     LayoutInflater
         .from(parent.context)
