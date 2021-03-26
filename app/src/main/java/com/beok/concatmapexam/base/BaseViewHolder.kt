@@ -8,19 +8,21 @@ import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.RecyclerView
 
-class BaseViewHolder<T>(
+open class BaseViewHolder<T, VDB : ViewDataBinding>(
     parent: ViewGroup,
     @LayoutRes private val layoutResourceID: Int,
-    private val bindingID: Int
+    private val bindingID: Int,
+    private val viewModels: Map<Int, ViewModel>
 ) : RecyclerView.ViewHolder(
     LayoutInflater
         .from(parent.context)
         .inflate(layoutResourceID, parent, false)
 ) {
 
-    private val binding: ViewDataBinding = DataBindingUtil.bind(itemView)!!
+    protected val binding: VDB = DataBindingUtil.bind(itemView)!!
 
-    fun bind(item: T, viewModels: Map<Int, ViewModel>) {
+    open fun bind(item: T?) {
+        if (item == null) return
         binding.setVariable(bindingID, item)
         viewModels.keys.forEach {
             binding.setVariable(it, viewModels[it])
