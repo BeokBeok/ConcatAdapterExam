@@ -12,9 +12,9 @@ open class BaseListAdapter<T, VDB : ViewDataBinding>(
     private val bindingID: Int,
     private val viewModels: Map<Int, ViewModel> = mapOf(),
     diffUtil: DiffUtil.ItemCallback<T>
-) : ListAdapter<T, BaseViewHolder<T, VDB>>(diffUtil) {
+) : ListAdapter<T, BaseViewHolder<VDB>>(diffUtil) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<T, VDB> =
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<VDB> =
         BaseViewHolder(
             parent = parent,
             layoutResourceID = layoutResourceID,
@@ -22,7 +22,7 @@ open class BaseListAdapter<T, VDB : ViewDataBinding>(
             viewModels = viewModels,
         )
 
-    override fun onBindViewHolder(holder: BaseViewHolder<T, VDB>, position: Int) {
+    override fun onBindViewHolder(holder: BaseViewHolder<VDB>, position: Int) {
         holder.bind(item = getItem(position))
     }
 
