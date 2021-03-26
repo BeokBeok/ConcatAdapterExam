@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.DiffUtil
 import com.beok.concatmapexam.banner.Banner
 import com.beok.concatmapexam.banner.BannerViewModel
+import com.beok.concatmapexam.base.BaseAdapter
 import com.beok.concatmapexam.base.BaseListAdapter
 import com.beok.concatmapexam.cartoon.Cartoon
 import com.beok.concatmapexam.cartoon.CartoonViewModel
@@ -35,21 +36,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-        val bannerAdapter = BaseListAdapter<Banner, ItemBannerBinding>(
+        val bannerAdapter = BaseAdapter<Banner, ItemBannerBinding>(
             layoutResourceID = R.layout.item_banner,
-            bindingID = BR.banner,
-            diffUtil = object : DiffUtil.ItemCallback<Banner>() {
-                override fun areItemsTheSame(oldItem: Banner, newItem: Banner): Boolean {
-                    return oldItem.id == newItem.id
-                }
-
-                override fun areContentsTheSame(oldItem: Banner, newItem: Banner): Boolean {
-                    return oldItem == newItem
-                }
-            }
+            bindingID = BR.banner
         ).apply {
             bannerViewModel.banner.observe(this@MainActivity, {
-                submitList(it)
+                replaceItemList(it)
+                notifyItemInserted(0)
             })
         }
         val cartoonAdapter = BaseListAdapter<Cartoon, ItemCartoonBinding>(
