@@ -3,11 +3,13 @@ package com.beok.concatmapexam.base
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.databinding.ViewDataBinding
+import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.RecyclerView
 
-class BaseAdapter<VDB : ViewDataBinding>(
+open class BaseAdapter<VDB : ViewDataBinding>(
     @LayoutRes private val layoutResourceID: Int,
-    private val bindingID: Int
+    private val bindingID: Int,
+    private val viewModels: Map<Int, ViewModel> = mapOf()
 ) : RecyclerView.Adapter<BaseViewHolder<VDB>>() {
 
     private val itemList = mutableListOf<Any>()
@@ -16,7 +18,8 @@ class BaseAdapter<VDB : ViewDataBinding>(
         BaseViewHolder(
             parent = parent,
             layoutResourceID = layoutResourceID,
-            bindingID = bindingID
+            bindingID = bindingID,
+            viewModels = viewModels
         )
 
     override fun onBindViewHolder(holder: BaseViewHolder<VDB>, position: Int) {
