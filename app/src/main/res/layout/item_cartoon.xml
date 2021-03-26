@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="cartoon"
+            type="com.beok.concatmapexam.cartoon.Cartoon" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/iv_user_thumbnail"
+            srcWithGlide="@{cartoon.imageURL}"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="@null"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_user_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="@{cartoon.name}"
+            app:layout_constraintBottom_toBottomOf="@id/iv_user_thumbnail"
+            app:layout_constraintStart_toEndOf="@id/iv_user_thumbnail"
+            app:layout_constraintTop_toTopOf="@id/iv_user_thumbnail" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
