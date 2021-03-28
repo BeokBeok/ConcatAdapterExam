@@ -1,4 +1,4 @@
-package com.beok.concatmapexam
+package com.beok.concatadapterexam
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

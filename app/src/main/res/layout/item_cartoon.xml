@@ -6,7 +6,7 @@
 
         <variable
             name="cartoon"
-            type="com.beok.concatmapexam.cartoon.Cartoon" />
+            type="com.beok.concatadapterexam.cartoon.Cartoon" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -6,11 +6,11 @@
 
         <variable
             name="tekken"
-            type="com.beok.concatmapexam.tekken.Tekken" />
+            type="com.beok.concatadapterexam.tekken.Tekken" />
 
         <variable
             name="vm"
-            type="com.beok.concatmapexam.tekken.TekkenViewModel" />
+            type="com.beok.concatadapterexam.tekken.TekkenViewModel" />
 
     </data>
 

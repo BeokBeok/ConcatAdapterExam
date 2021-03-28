@@ -1,13 +1,13 @@
-package com.beok.concatmapexam.tekken
+package com.beok.concatadapterexam.tekken
 
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
-import com.beok.concatmapexam.BR
-import com.beok.concatmapexam.R
-import com.beok.concatmapexam.base.BaseAdapter
-import com.beok.concatmapexam.base.BaseViewHolder
-import com.beok.concatmapexam.databinding.ItemTekkenBinding
-import com.beok.concatmapexam.databinding.ItemTekkenSummaryBinding
+import com.beok.concatadapterexam.BR
+import com.beok.concatadapterexam.R
+import com.beok.concatadapterexam.base.BaseAdapter
+import com.beok.concatadapterexam.base.BaseViewHolder
+import com.beok.concatadapterexam.databinding.ItemTekkenBinding
+import com.beok.concatadapterexam.databinding.ItemTekkenSummaryBinding
 
 class TekkenViewHolder(
     parent: ViewGroup,

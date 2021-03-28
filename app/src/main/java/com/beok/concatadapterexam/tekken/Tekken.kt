@@ -1,4 +1,4 @@
-package com.beok.concatmapexam.tekken
+package com.beok.concatadapterexam.tekken
 
 data class Tekken(
     val id: Int,

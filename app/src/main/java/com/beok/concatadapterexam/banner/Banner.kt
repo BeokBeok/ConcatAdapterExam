@@ -1,4 +1,4 @@
-package com.beok.concatmapexam.banner
+package com.beok.concatadapterexam.banner
 
 data class Banner(
     val id: Int,

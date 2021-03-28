@@ -6,7 +6,7 @@
 
         <variable
             name="content"
-            type="com.beok.concatmapexam.tekken.Content" />
+            type="com.beok.concatadapterexam.tekken.Content" />
     </data>
 
     <LinearLayout

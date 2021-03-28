@@ -1,4 +1,4 @@
-package com.beok.concatmapexam.base
+package com.beok.concatadapterexam.base
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

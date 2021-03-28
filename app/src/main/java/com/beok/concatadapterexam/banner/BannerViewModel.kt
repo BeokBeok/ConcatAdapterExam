@@ -1,4 +1,4 @@
-package com.beok.concatmapexam.banner
+package com.beok.concatadapterexam.banner
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

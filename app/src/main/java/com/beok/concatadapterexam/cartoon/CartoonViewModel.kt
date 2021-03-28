@@ -1,4 +1,4 @@
-package com.beok.concatmapexam.cartoon
+package com.beok.concatadapterexam.cartoon
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

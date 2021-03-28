@@ -1,4 +1,4 @@
-package com.beok.concatmapexam
+package com.beok.concatadapterexam
 
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -6,18 +6,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.DiffUtil
-import com.beok.concatmapexam.banner.Banner
-import com.beok.concatmapexam.banner.BannerViewModel
-import com.beok.concatmapexam.base.BaseAdapter
-import com.beok.concatmapexam.base.BaseListAdapter
-import com.beok.concatmapexam.cartoon.Cartoon
-import com.beok.concatmapexam.cartoon.CartoonViewModel
-import com.beok.concatmapexam.databinding.ActivityMainBinding
-import com.beok.concatmapexam.databinding.ItemBannerBinding
-import com.beok.concatmapexam.databinding.ItemCartoonBinding
-import com.beok.concatmapexam.databinding.ItemTekkenSummaryBinding
-import com.beok.concatmapexam.tekken.TekkenAdapter
-import com.beok.concatmapexam.tekken.TekkenViewModel
+import com.beok.concatadapterexam.banner.BannerViewModel
+import com.beok.concatadapterexam.base.BaseAdapter
+import com.beok.concatadapterexam.base.BaseListAdapter
+import com.beok.concatadapterexam.cartoon.Cartoon
+import com.beok.concatadapterexam.cartoon.CartoonViewModel
+import com.beok.concatadapterexam.databinding.ActivityMainBinding
+import com.beok.concatadapterexam.databinding.ItemBannerBinding
+import com.beok.concatadapterexam.databinding.ItemCartoonBinding
+import com.beok.concatadapterexam.tekken.TekkenAdapter
+import com.beok.concatadapterexam.tekken.TekkenViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
